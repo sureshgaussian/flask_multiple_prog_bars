@@ -43,4 +43,10 @@ data: {'0': value_0, '1':value_1,'2':value_2}
 ```
 where value_x indicates the progress of the stream x
 
+When the message from serer is received, we need to update the correspoding progress-bar div elements in html.
+```
+qi = "#prog_"+i
+$(qi).css('width', sent_data[i]+'%').attr('aria-valuenow', sent_data[i]);
+```
+find the class with id = prog_<i> in html, and update its elements
 We close the SSE connection when all the progress bars reach 100%
