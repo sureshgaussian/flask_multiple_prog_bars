@@ -1,4 +1,12 @@
 A simple Flask application to show how to render multiple progress bars. 
+
+## Setup
+The code was tested on Ubuntu machine. It should work as is on a Windows machine also. In the worse case you may have to add the missing modules to your Python installation.
+Python3 and Anaconda distribution was used for the project.
+
+### Create conda env
+Create conda env from the env file:
+` conda env create -f conda_env.yml `
 ## Concept
 The application uses Flask framework to build the web application. The main technique used is to open a server-sent-event connection using [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) API. Once the web connection is established, and the client renders index.html page, it opens an SSE with the server to get events. Server sends a stream of text to the client. Client side JavaScript code updates the corresponding html elements to update the progress bar.
 
