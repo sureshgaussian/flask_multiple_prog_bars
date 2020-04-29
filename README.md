@@ -50,3 +50,7 @@ $(qi).css('width', sent_data[i]+'%').attr('aria-valuenow', sent_data[i]);
 ```
 find the class with id = prog_<i> in html, and update its elements
 We close the SSE connection when all the progress bars reach 100%
+
+## Acknowledgements
+The base idea and code was from https://github.com/djdmorrison/flask-progress-example.
+Thanks to my friend Pavan for helping me understand the code.
