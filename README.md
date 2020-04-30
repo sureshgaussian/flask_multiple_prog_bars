@@ -11,6 +11,16 @@ Create conda env from the env file:
 The application uses Flask framework to build the web application. The main technique used is to open a server-sent-event connection using [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) API. Once the web connection is established, and the client renders index.html page, it opens an SSE with the server to get events. Server sends a stream of text to the client. Client side JavaScript code updates the corresponding html elements to update the progress bar.
 
 ## Details
+
+### Parameters
+There are three parameters that one can change.
+1. Number of bars to display
+2. Percent increase for each update.
+3. Time interval between two updates
+
+Note that progress bars proceed in lock steps, with bar[i]= bar[0]+i * percent increase. This can be changed by rewriting progress()
+All the above parameters are encapsulated in `class Config` at the top of the app.py
+
 ### Routes
 1. '/' for the home page, and index page
 2. '/progress' for EventSource to connect to. One can choose any name for this route, but the same name should be used in JavaScript when establishing SSE
